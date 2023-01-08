@@ -1,3 +1,5 @@
+import random
+
 class Cat:
     name = 'Bob'
     color = 'White'
@@ -25,3 +27,11 @@ class Cat:
 cat1 = Cat('Bob', 'Red', 3)
 cat2 = Cat('Pups', 'White', 4)
 
+cololors = ('Red', "White",'Black', 'Spot' )
+
+cats = [Cat(f'cat{i}', random.choice(cololors), random.randint(1,10)) for i in range(1,100)]
+
+for cat in cats:
+    cat.say_meow()
+
+cats[87].sleep()
