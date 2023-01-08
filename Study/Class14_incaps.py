@@ -20,10 +20,5 @@ obj = A()
 
 print(obj.a)
 print(obj.a1)
-print(obj._b)
 print(obj.__dict__)
 print(obj.get_attr_a())
-print(obj.get_attr_b())
-obj.a
-obj._b
-obj.__c
