@@ -1,8 +1,6 @@
 # class MediaPlayer:
-#
-#     def open(self, file):
+##     def open(self, file):
 #         self.filename = file
-#
 #
 #     def play(self):
 #         print(f'Воспроизведение {self.filename}')
@@ -13,17 +11,24 @@
 # media2.open('filemedia2')
 # media1.play()
 # media2.play()
-
-class Graph:
-    LIMIT_Y = [0, 10]
-
-    def set_data(self, data):
-        self.data = data
-
-    def draw(self):
-        print(" ".join(map(str, filter(lambda x: Graph.LIMIT_Y[0]<= x <=Graph.LIMIT_Y[1], self.data))))
-
-
-graph_1 = Graph()
-graph_1.set_data([10, -5, 100, 20, 0, 80, 45, 2, 5, 7])
-graph_1.draw()
+# ---------------------------------------------------------------------------
+# class Graph:
+#     LIMIT_Y = [0, 10]
+#
+#     def set_data(self, data):
+#         self.data = data
+#
+#     def draw(self):
+#         print(" ".join(map(str, filter(lambda x: Graph.LIMIT_Y[0]<= x <=Graph.LIMIT_Y[1], self.data))))
+#
+# graph_1 = Graph()
+# graph_1.set_data([10, -5, 100, 20, 0, 80, 45, 2, 5, 7])
+# graph_1.draw()
+# -----------------------------------------------------------
+# class StreamData:
+#     def create(self, fields, lst_values):
+#         if len(fields) != len(lst_values):
+#             return False
+#         for i ,key in enumerate(fields):
+#             setattr(self, key,lst_values[i])
+# -------------------------------------------------------
