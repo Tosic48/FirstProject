@@ -32,18 +32,52 @@
 #         for i ,key in enumerate(fields):
 #             setattr(self, key,lst_values[i])
 # -------------------------------------------------------
-lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 1200']
-class DataBase:
-    lst_data = []
-    FIELDS = ('id', 'name', 'old', 'salary')
+# lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 1200']
+# class DataBase:
+#     lst_data = []
+#     FIELDS = ('id', 'name', 'old', 'salary')
+#
+#     def select(self, a, b):
+#         return self.lst_data[a: b+1]
+#
+#     def insert(self, data):
+#         for x in data:
+#             self.lst_data.append(dict(zip(self.FIELDS, x.split())))
+#
+# data = DataBase()
+# data.insert(lst_in)
+# print(data.lst_data)
+# --------------------------------------------------------------------
+class Translator:
+    def add(self, eng, rus):
+        if 'tr' not in self.__dict__:
+            self.tr = {}
 
-    def select(self, a, b):
-        return self.lst_data[a: b+1]
+        self.tr.setdefault(eng, [])
+        if rus not in self.tr[eng]:
+            self.tr[eng].append(rus)
 
-    def insert(self, data):
-        for x in data:
-            self.lst_data.append(dict(zip(self.FIELDS, x.split())))
+    def remove(self, eng):
+        if eng in self.tr:
+            del self.tr[eng]
+        else:
+            print(False)
 
-data = DataBase()
-data.insert(lst_in)
-print(data.lst_data)
+    def translate(self, eng):
+        if eng in self.tr:
+            return self.tr[eng]
+        else:
+            None
+
+tr = Translator()
+tr.add('tree', 'дерево')
+tr.add('car', 'машина')
+tr.add('car' , 'автомобиль')
+tr.add('leaf' , 'лист')
+tr.add('river' , 'река')
+tr.add('go' , 'идти')
+tr.add('go' , 'ехать')
+tr.add('go', 'ходить')
+tr.add('milk' , 'молоко')
+tr.remove('car')
+print(*tr.translate('go'))
