@@ -15,3 +15,5 @@ class Point:
 pt = Point()
 pt.set_coords(1, 2)
 print(pt.get_coords())
+f = getattr(pt, 'get_coords')
+print(f())
