@@ -1,21 +1,51 @@
-class Point:
-    color = 'red'
-    circle = 2
+class Animal:
 
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-    def __del__(self):
-        print('удаление экземпл' + str(self))
-
-    def set_coords(self, x, y):
-        self.x = x
-        self.y = y
-
-    def get_coords(self):
-        return (self.x, self.y)
+    def sleep(self):
+        print(f'{self} is sleeping: "Zzzz"')
 
 
-pt = Point(1, 2)
-print(pt.__dict__)
+class Cat(Animal):
+
+    def say_meow(self):
+        print(f'{self.name} says "Meow!"')
+
+    def __str__(self):
+        return f'Cat {self.name}'
+
+
+class Dog(Animal):
+
+    def say_wohw(self):
+        print(f'{self.name} says "Wohw!"')
+
+    def sleep(self):
+        print(f'{self.name} is sleeping: "Zzzz"')
+
+    def __str__(self):
+        return f'Dog {self.name}'
+
+
+class Pig(Animal):
+
+    def say_hru(self):
+        print(f'{self.name} says "Hru!"')
+
+    # def __str__(self):
+    #     return f'Pig {self.name}'
+
+
+cat = Cat('Bob', 4)
+dog = Dog('Baks', 5)
+pig = Pig('Peppy', 2)
+
+print(cat.name)
+print(dog.name)
+print(pig.age)
+pig.sleep()
+dog.sleep()
+dog.say_wohw()
+pig.say_hru()
