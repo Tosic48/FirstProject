@@ -4,6 +4,7 @@ class Warrior:
         self.attack = 5
         self.is_alive = True
 
+
 class Knight(Warrior):
     def __init__(self):
         Warrior.__init__(self)
@@ -27,3 +28,6 @@ bruce = Warrior()
 carl = Knight()
 dave = Warrior()
 mark = Warrior()
+
+print(fight(chuck, carl))
+
