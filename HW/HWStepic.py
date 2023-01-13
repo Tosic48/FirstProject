@@ -1,8 +1,6 @@
-# put your python code here
-# ls = input().split()
-ls = [8, -11, 4, 3, 6]
-sl= []
-for j, i in enumerate(ls):
-    sl.append(i**2)
+t = (3.4, -56.7)
+l = tuple(map(int, input().split()))
+t = t+l
 
-print(*sl)
+
+print(t)
