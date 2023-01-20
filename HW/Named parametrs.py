@@ -6,15 +6,23 @@
 #
 # v = get_v(1,c=2,b=3) #named in end!!!
 # print(v)
+# ------------------------------------------
+# def cmp_str(s1, s2, reg=False, trim=True):
+#     if reg:
+#         s1 = s1.lower()
+#         s2 = s2.lower()
+#     if trim:
+#         s1 = s1.strip()
+#         s2 = s2.strip()
+#     return s1 == s2
+#
+#
+# print(cmp_str('Python ', ' Python', trim=False))
 
-def cmp_str(s1, s2, reg=False, trim=True):
-    if reg:
-        s1 = s1.lower()
-        s2 = s2.lower()
-    if trim:
-        s1 = s1.strip()
-        s2 = s2.strip()
-    return s1 == s2
+def add_value(value, lst=[]) #списолк изменяемый потому там 1 ца остается
+    lst.append(value)
+    return lst
 
-
-print(cmp_str('Python ', ' Python', trim=False))
+l = add_value(1)
+l = add_value(2)
+print(l)
