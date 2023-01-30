@@ -18,11 +18,21 @@
 #
 #
 # print(cmp_str('Python ', ' Python', trim=False))
+#________________________________________________
+# def add_value(value, lst=[]) #списолк изменяемый потому там 1 ца остается
+#     lst.append(value)
+#     return lst
+#
+# l = add_value(1)
+# l = add_value(2)
+# print(l)
+def check_password(passw, chars = "$%!?@#"):
+    if len(passw) >= 8:
+        for i in passw:
+            if i in chars:
+                return True
+            else:
+                False
+    else:
+        return False
 
-def add_value(value, lst=[]) #списолк изменяемый потому там 1 ца остается
-    lst.append(value)
-    return lst
-
-l = add_value(1)
-l = add_value(2)
-print(l)
