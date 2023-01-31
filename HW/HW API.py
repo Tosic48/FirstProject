@@ -1,7 +1,12 @@
 import requests
-BASE_URL = 'https://www.nbrb.by/api/exrates/currencies'
-query_params = {
-    "limit": 3
+import pprint   # для вывода информации в более красивом виде
+
+params = {
+    'timeZone': 'Europe/Minsk'
 }
-response = requests.get(f"{BASE_URL}/products", params=query_params)
-print(response.json())
+
+api_result = requests.get('https://www.timeapi.io/api/Time/current/zone', params)
+
+api_response = api_result.json()
+
+pprint.pprint(api_response)
