@@ -1,7 +1,7 @@
 import requests
 
 api_result = requests.get('https://www.timeapi.io')
-print(api_result.status_code)
+print(f'status of request: {api_result.status_code}')
 if api_result.status_code == 200:
     while True:
         city = input('write city of Europe where you live: ')
