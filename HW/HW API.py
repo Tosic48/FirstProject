@@ -12,7 +12,8 @@ if api_result.status_code == 200:
             api_result = requests.get('https://www.timeapi.io/api/Time/current/zone', params)
             api_response = api_result.json()
             try:
-                print(f'current time in {city}: {api_response["time"]} and date: {api_response["date"]}')
+                print(f'current time in {city}: {api_response["time"]}'
+                      f' and date: {api_response["date"]}')
             except:
                 print('city is not found')
 else:
