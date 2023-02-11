@@ -1,5 +1,4 @@
 import requests
-
 api_result = requests.get('https://www.timeapi.io')
 print(f'status of request: {api_result.status_code}')
 if api_result.status_code == 200:
