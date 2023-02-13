@@ -1,7 +1,19 @@
 import requests
-BASE_URL = 'https://www.nbrb.by/api/exrates/currencies'
-query_params = {
-    "limit": 3
-}
-response = requests.get(f"{BASE_URL}/products", params=query_params)
-print(response.json())
+api_result = requests.get('https://www.timeapi.io')
+print(f'status of request: {api_result.status_code}')
+if api_result.status_code == 200:
+    while True:
+        city = input('write city of Europe where you live: ')
+        if city:
+            params = {
+                'timeZone': 'Europe/' + city
+            }
+            api_result = requests.get('https://www.timeapi.io/api/Time/current/zone', params)
+            api_response = api_result.json()
+            try:
+                print(f'current time in {city}: {api_response["time"]}'
+                      f' and date: {api_response["date"]}')
+            except:
+                print('city is not found')
+else:
+    print('Error!')

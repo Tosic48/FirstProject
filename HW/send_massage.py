@@ -19,5 +19,5 @@ def send_email(addr_to, msg_subj, msg_text):
     server.quit()                                           # Выходим
 
 
-addr_to = 'nikmarooo@mail.ru'
+addr_to = 'antonsuhodolski@mail.ru'
 send_email(addr_to, "ДЗ 20-го занятия", "Текст сообщения")
